@@ -1,0 +1,78 @@
+   <h1 mat-dialog-title align="center"> Cria um novo Colaborador</h1>
+   <div mat-dialog-content>
+        <form fxLayout="column" fxLayoutAlign="start stretch">
+            <div fxFlex="100"  fxLayout="column" fxLayoutAlign="space-between  begin">
+                <mat-form-field fxFlex="45" >  
+                  <input matInput type="text" placeholder="Nome" id="nome" name="nome" [(ngModel)]="colaboradores.nome" >
+                </mat-form-field> 
+                <mat-form-field fxFlex="45">
+                  <input matInput type="text" placeholder="Email" id="email" name="email" [(ngModel)]="colaboradores.email" >
+                </mat-form-field>
+              <div fxFlex="100"  fxLayout="row" fxLayoutAlign="space-between  begin">
+                  <mat-form-field fxFlex="45">
+                      <input matInput type="text" placeholder="Função" id="funcao" name="funcao" [(ngModel)]="colaboradores.funcao" >
+                  </mat-form-field>
+                  <mat-form-field fxFlex="25">
+                      <input matInput  type="date"  id="nascimento" placeholder="Data de Nascimento" [(ngModel)]="colaboradores.nascimento" name="nascimento">            
+                  </mat-form-field>
+              </div>
+                 
+              </div>
+              <div fxFlex="100" fxLayoutAlign="begin">
+                  <h4>Endereço:</h4>
+              </div>          
+              <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between begin" fxLayoutGap="20px">
+                <mat-form-field fxFlex="50" >  
+                  <input matInput type="text" placeholder="Endereço" id="logradouro" name="logradouro" [(ngModel)]="colaboradores.logradouro">
+                </mat-form-field> 
+                <mat-form-field fxFlex="20">
+                  <input matInput type="text" placeholder="Número" id="numero" name="numero" [(ngModel)]="colaboradores.numero">
+                </mat-form-field>
+                <mat-form-field fxFlex="30">
+                    <input matInput type="text" placeholder="Complemento" id="complemento" name="complemento" [(ngModel)]="colaboradores.complemento">
+                  </mat-form-field>            
+              </div>
+              <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between begin" fxLayoutGap="20px">
+                  <mat-form-field fxFlex="30" >  
+                    <input matInput type="text" placeholder="CEP" id="cep" name="cep" [(ngModel)]="colaboradores.cep" mask="00000-000" 
+                    onblur="pesquisacep(this.value);">
+                  </mat-form-field> 
+                  <mat-form-field fxFlex="30">
+                    <input matInput type="text" placeholder="Bairro" id="bairro" name="bairro" [(ngModel)]="colaboradores.bairro">
+                  </mat-form-field>
+                  <mat-form-field fxFlex="30">
+                    <input matInput type="text" placeholder="Cidade" id="cidade" name="cidade" [(ngModel)]="colaboradores.cidade">
+                  </mat-form-field>
+                  <mat-form-field fxFlex="10">
+                      <input matInput type="text" placeholder="UF" id="uf" name="uf" [(ngModel)]="colaboradores.uf">
+                    </mat-form-field>            
+                </div>
+      
+              <div fxFlex="100" fxLayoutAlign="begin">
+                <h4>Telefone: </h4>
+              </div> 
+      
+              <div fxFlex="100"  fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="20px">
+                <mat-form-field fxFlex="30">  
+                  <input matInput type="text" placeholder="Telefone" id="telefone" name="telefone" [(ngModel)]="colaboradores.telefone" mask="(00) 0000-0000" >
+                </mat-form-field>
+              </div>     
+      
+              <div fxFlex="100" fxLayoutAlign="begin">
+                  <h4>Celular: </h4>
+                </div> 
+        
+                <div fxFlex="100"  fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="20px">
+                  <mat-form-field fxFlex="30">  
+                    <input matInput type="text" placeholder="Celular" id="celular" name="celular" [(ngModel)]="colaboradores.celular" mask="(00) 00000-0000" >
+                  </mat-form-field>
+                </div>     
+      
+             
+                <div mat-dialog-action [align]="'end'" fxLayoutGap="10px">
+                  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+                  <button mat-raised-button color="primary" (click)="create()"> Criar </button>
+                </div>
+        </form>
+   </div>
+
